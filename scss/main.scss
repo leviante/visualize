@@ -10,7 +10,7 @@
 //Body
 body {
   background: url(../img/bg.jpg);
-  background-position: center bottom;
+  background-position: top bottom;
   background-repeat: no-repeat;
   background-size: cover;
   color: $font-color;
@@ -55,6 +55,13 @@ body {
       text-decoration: none;
       text-transform: uppercase;
       border-bottom: 1px dotted darken($font-color, 15);
+      transition: color 0.3s ease-out, border-color 0.3s ease-out;
+
+      &:hover {
+        transition: color 0.3s ease-out, border-color 0.3s ease-out;
+        border-color: transparent;
+        color: lighten($font-color, 15);
+      }
     }
   }
 
@@ -172,9 +179,16 @@ body {
       text-decoration: none;
       text-transform: uppercase;
       border-bottom: 1px dotted darken($font-color, 15);
+      transition: color 0.3s ease-out, border-color 0.3s ease-out;
 
       &:nth-child(2) {
         text-transform: capitalize;
+      }
+
+      &:hover {
+        transition: color 0.3s ease-out, border-color 0.3s ease-out;
+        border-color: transparent;
+        color: lighten($font-color, 15);
       }
     }
 
