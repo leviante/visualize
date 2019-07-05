@@ -1,3 +1,24 @@
+@charset "UTF-8";
+/*-----------------------------------
+  -----------------------------------
+  -----------------------------------
+
+    Project Name:  Visualize redesign 
+    Project Start Date: 04.07.2019
+    Project End Date: 05.07.2019
+    Author: Berk Açıkgöz
+
+    TABLE OF CONTENTS:
+    
+    - Global Reset
+    - Body
+    - Main Section
+    - Modal Popup
+    - Footer Section
+
+-----------------------------------
+-----------------------------------
+-----------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +36,8 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px; }
+  #main.blur {
+    filter: blur(3px); }
   #main #avatar {
     display: flex;
     flex-direction: column;
@@ -115,27 +138,37 @@ body {
             background: rgba(255, 255, 255, 0.35); }
 
 #modal {
-  display: none !important;
+  visibility: hidden;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
-  height: 200vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 100%; }
+  opacity: 0;
+  width: 100%;
+  z-index: -1; }
+  #modal.show {
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.5s ease-out; }
   #modal .popup {
     position: relative;
     background: rgba(255, 255, 255, 0.3);
-    height: 0;
-    width: 80%; }
+    border-radius: 5px;
+    width: 90%; }
     #modal .popup img {
       opacity: 0;
+      border-radius: 5px;
       width: 100%;
-      height: 100%;
-      border-radius: 5px; }
+      height: 100%; }
+      #modal .popup img.img-show {
+        transition: all 0.5s ease-out;
+        opacity: 1; }
     #modal .popup i {
       position: absolute;
       opacity: 0;
@@ -147,9 +180,11 @@ body {
       border-radius: 50%;
       margin: 15px;
       padding: 10px 12px;
-      transition: all 0.3s ease-out; }
+      transition: all 0.5s ease-out; }
+      #modal .popup i.show {
+        opacity: 1; }
     #modal .popup:hover i {
-      transition: all 0.3s ease-out;
+      transition: all 0.5s ease-out;
       color: #c7c4ce;
       border-color: #c7c4ce; }
 
@@ -157,10 +192,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; }
+  #main-footer.blur {
+    filter: blur(3px); }
   #main-footer hr {
+    border: 1px;
     border-style: ridge;
     border-color: #c7c4ce;
-    border: 0.5px;
     opacity: 0.3;
     width: 10rem;
     margin-bottom: 60px; }

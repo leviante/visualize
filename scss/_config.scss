@@ -3,6 +3,10 @@ $primary-font: "Lato", sans-serif;
 $primary-color: #3c3c57;
 $font-color: #c7c4ce;
 
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
 @mixin flex {
   display: flex;
 }

@@ -2,7 +2,7 @@
   "name": "visualize",
   "version": "1.0.0",
   "description": "a template redesign for practice",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive"
   },
