@@ -4,11 +4,13 @@
   "description": "a template redesign for practice",
   "main": "app.js",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "sass": "node-sass -w scss/ -o dist/css/ --recursive"
   },
   "author": "Berk Açıkgöz",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0"
   }
 }
